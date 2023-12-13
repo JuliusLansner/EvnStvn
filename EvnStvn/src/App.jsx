@@ -1,34 +1,52 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { RouterProvider, Route, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 import './App.css'
+import Events from './components/pages/Events'
+import NewEvent from './components/pages/newEvent'
+import MainLayout from './layout/MainLayout'
+import Logout from './components/pages/Logout'
+import UserPage from './components/pages/UserPage'
+import facade from './util/apiFacade'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  const login = (username,password) => {
+    facade.login(username,password).then((login)=>setLoggedIn(true))
+  }
+  const logout = () =>  {
+    facade.logout();
+    setLoggedIn(false);
+  }
+ 
+  const routes = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<MainLayout 
+      loggedIn={loggedIn}
+      logout={logout}
+      login={login}
+      facade={facade}
+      
+      
+      />}>
+        
+        <Route path="newevents" element={<NewEvent loggedIn={loggedIn}/>}/>
+        <Route path="events" element={<Events loggedIn={loggedIn}/>}/>
+        <Route path="logout" element={<Logout loggedIn={loggedIn}/>}/>
+        <Route path="userpage" element={<UserPage loggedIn={loggedIn}/>}/>
+        
+        
+
+
+
+      </Route>
+    )
+  )
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+   <RouterProvider router={routes}/>
+
+   
   )
 }
 
