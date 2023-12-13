@@ -33,8 +33,8 @@ function EventFacade() {
     return events;
   };
 
-  const findEvent = (id) => {
-    events.find((event) => event.id === id);
+  const getEvent = (id) => {
+    return events.find((event) => event.id === id);
   };
 
   const deleteEvent = (id) => {
@@ -44,7 +44,7 @@ function EventFacade() {
   return(
     addEvent, 
     getAllEvents, 
-    findEvent, 
+    getEvent, 
     deleteEvent, 
     addUser, 
     addPayment
