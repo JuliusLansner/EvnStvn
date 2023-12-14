@@ -50,7 +50,12 @@ const EventDetails = () => {
               {paymentStatus === "unpaid" ? "Ikke betalt" : "Betalt"}
             </td>
             <td>
-              <button onClick={() => handlePaymentClick()}>Betal</button>
+              <button
+                onClick={() => handlePaymentClick()}
+                disabled={paymentStatus === "paid"}
+              >
+                {paymentStatus === "unpaid" ? "Betal" : "Betalt"}
+              </button>{" "}
             </td>
           </tr>
         </tbody>
