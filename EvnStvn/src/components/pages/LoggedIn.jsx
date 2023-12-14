@@ -6,7 +6,7 @@ function LoggedIn({facade}) {
         facade.fetchData('hotels','GET').then((data) => setData(data));
     }, []);
     return (<div>
-        <h1>... ...Loading done</h1>
+        welcome
     </div>  );
 }
 

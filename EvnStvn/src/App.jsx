@@ -11,17 +11,21 @@ import facade from './util/apiFacade'
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
 
-  const login = (username,password) => {
-    facade.login(username,password).then((login)=>setLoggedIn(true))
-  }
   const logout = () =>  {
     facade.logout();
     setLoggedIn(false);
   }
+
+  const login = (username,password) => {
+    
+    facade.login(username,password).then((res)=>setLoggedIn(true))
+  }
+ 
  
   const routes = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<MainLayout 
+      <Route path="/" element={
+      <MainLayout 
       loggedIn={loggedIn}
       logout={logout}
       login={login}
