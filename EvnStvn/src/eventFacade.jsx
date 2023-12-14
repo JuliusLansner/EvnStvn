@@ -42,18 +42,15 @@ function eventFacade() {
     event.payment.push(payment);
   };
 
-  const removePayment = (eventId, payment) => {
-    const event = findEvent(eventId);
+  const removePayment = (eventId, paymentId) => {
+    const event = events.find((event) => event.id === eventId);
 
-    // check event & payment exists
-    if (event && event.payment) {
-      // find index of payment
-      const index = event.payment.indexOf(payment);
-
-      if (index !== -1) {
-        // remove index from array. 1 means remove 1 element from array.
-        event.payment.splice(index, 1);
-      }
+    if (event) {
+      event.payments = event.payments.filter(
+        (payment) => payment.id !== paymentId
+      );
+    } else {
+      console.error("Event not found");
     }
   };
 
