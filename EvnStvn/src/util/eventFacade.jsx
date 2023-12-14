@@ -12,7 +12,11 @@ function eventFacade() {
   };
 
   let events = [
-    { id: 1, name: "Redbulls for dinner", payment: paymentForRedbulls },
+    {
+      id: 1,
+      name: "Redbulls for dinner",
+      payment: paymentForRedbulls,
+    },
     { id: 2, name: "Night at the club", payment: snacks },
     { id: 3, name: "Xmas rave", payment: [] },
     { id: 4, name: "Vacation to Finland", payment: [] },

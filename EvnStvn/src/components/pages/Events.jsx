@@ -1,10 +1,11 @@
 import "/Users/mikkel/Documents/GitHub/EvnStvn/EvnStvn/src/App.css";
 import { useState, useEffect } from "react";
 import eventFacade from "/src/util/eventFacade.jsx";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Events = () => {
   const [showMyEvents, setShowMyEvents] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setShowMyEvents(eventFacade.getEvents());
@@ -12,6 +13,7 @@ const Events = () => {
 
   const handleRowClick = (eventId) => {
     console.log("Clicked event with id: " + eventId);
+    navigate(`/events/event/${eventId}`);
   };
 
   return (
@@ -28,9 +30,7 @@ const Events = () => {
                   className="event-row"
                   onClick={() => handleRowClick(event.id)}
                 >
-                  <td>
-                    <Link to={`/events/event/${event.id}`}>{event.name}</Link>
-                  </td>
+                  <td>{event.name}</td>
                 </tr>
               ))}
             </tbody>

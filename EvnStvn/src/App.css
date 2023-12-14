@@ -16,6 +16,7 @@
   padding: 20px;
   text-align: left;
   border: 2px solid black;
+  border-radius: 10px; /* round corners */
 }
 
 .event-row {
@@ -26,7 +27,11 @@
 }
 
 .event-row:hover {
-  background-color: #ddd; /* Ændre farve ved hover efter ønske */
+  background-color: #ddd;
+}
+
+.event-row a {
+  color: black;
 }
 
 /* <!--   /events/event/:id   --> */
