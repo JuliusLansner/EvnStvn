@@ -6,7 +6,7 @@ function eventFacade() {
   };
 
   let snacks = {
-    user: "Olfert",
+    user: "Martin",
     amount: 342.5,
     description: "7Elevn taquitos",
   };
@@ -15,9 +15,9 @@ function eventFacade() {
     {
       id: 1,
       name: "Redbulls for dinner",
-      payment: paymentForRedbulls,
+      payment: [paymentForRedbulls, snacks],
     },
-    { id: 2, name: "Night at the club", payment: snacks },
+    { id: 2, name: "Night at the club", payment: [snacks] },
     { id: 3, name: "Xmas rave", payment: [] },
     { id: 4, name: "Vacation to Finland", payment: [] },
   ];
