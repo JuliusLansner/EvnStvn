@@ -9,10 +9,10 @@ function MainLayout({loggedIn,login,logout,facade}) {
 
 
 
-            <NavLink to="events">Events</NavLink>
-            <NavLink to="newevents">Nyt event</NavLink>
-            <NavLink to ="logout">Log ud</NavLink>
-            <NavLink to ="userpage">Brugerside</NavLink>
+        | <NavLink to="events">Events</NavLink> | 
+            <NavLink to="newevents">Nyt event</NavLink> | 
+            <NavLink to ="logout">Log ud</NavLink> | 
+            <NavLink to ="userpage">Brugerside</NavLink> | 
             
         
             <Outlet/>
