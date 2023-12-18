@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import eventFacade from "/src/util/eventFacade.jsx";
-import "/Users/mikkel/Documents/GitHub/EvnStvn/EvnStvn/src/App.css";
+import "../../App.css";
 
 const EventDetails = () => {
   const { id } = useParams();

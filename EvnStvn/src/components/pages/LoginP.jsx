@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import LoggedIn from './LoggedIn';
 function LoginP({login}) {
 const init= { username: '',password: ''};
 const [loginCreds,setLoginCreds] = useState(init);
@@ -19,7 +20,7 @@ setLoginCreds({...loginCreds,[e.target.id]:e.target.value});
         <input placeholder="Password" id="password"/>
         <button onClick={performLogin}>Login</button>
     </form>
-        
+   
     </div>  );
 }
 

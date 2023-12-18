@@ -1,4 +1,4 @@
-import "/Users/mikkel/Documents/GitHub/EvnStvn/EvnStvn/src/App.css";
+import "../../App.css";
 import { useState, useEffect } from "react";
 import eventFacade from "/src/util/eventFacade.jsx";
 import { useNavigate } from "react-router-dom";
@@ -18,6 +18,7 @@ const Events = () => {
 
   return (
     <div>
+      
       <h1>Events</h1>
 
       {showMyEvents ? (
@@ -39,6 +40,9 @@ const Events = () => {
       ) : (
         <p>Her kan du oprette et nyt event</p>
       )}
+
+
+      
     </div>
   );
 };

@@ -1,12 +1,10 @@
-import {useState, useEffect} from 'react';
-function LoggedIn({facade}) {
-    const [data,setData] = useState('... ...');
 
-    useEffect(() => {
-        facade.fetchData('hotels','GET').then((data) => setData(data));
-    }, []);
+
+function LoggedIn({userName}) {
+
+
     return (<div>
-        welcome
+       Velkommen, {userName}
     </div>  );
 }
 
