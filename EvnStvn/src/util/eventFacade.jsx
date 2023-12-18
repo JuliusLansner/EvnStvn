@@ -5,9 +5,19 @@ function eventFacade() {
     description: "Redbulls",
   };
 
+  let snacks = {
+    user: "Martin",
+    amount: 342.5,
+    description: "7Elevn taquitos",
+  };
+
   let events = [
-    { id: 1, name: "Redbulls for dinner", payment: paymentForRedbulls },
-    { id: 2, name: "Night at the club", payment: [] },
+    {
+      id: 1,
+      name: "Redbulls for dinner",
+      payment: [paymentForRedbulls, snacks],
+    },
+    { id: 2, name: "Night at the club", payment: [snacks] },
     { id: 3, name: "Xmas rave", payment: [] },
     { id: 4, name: "Vacation to Finland", payment: [] },
   ];
@@ -19,7 +29,7 @@ function eventFacade() {
   };
 
   const findEvent = (id) => {
-    return events.find((event) => event.id === id);
+    return events.find((event) => event.id.toString() === id);
   };
 
   const createEvent = (name, payment) => {
