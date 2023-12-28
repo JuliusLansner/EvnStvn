@@ -3,7 +3,7 @@
 function LoggedIn({userName}) {
 
 
-    return (<div>
+    return (<div className="welcome"> 
        Velkommen, {userName}
     </div>  );
 }

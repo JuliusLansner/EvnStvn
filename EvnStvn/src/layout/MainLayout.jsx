@@ -8,7 +8,7 @@ function MainLayout({loggedIn,login,facade,setUserName,setLoggedIn}) {
 
   const navigate = useNavigate();
     
-    const logoutx = () => {
+    const logout = () => {
         facade.logout();
         setLoggedIn(false);
         setUserName("");
@@ -20,12 +20,12 @@ function MainLayout({loggedIn,login,facade,setUserName,setLoggedIn}) {
         {!loggedIn ? (<LoginP login={login} />):(
             <div>
               
-              <button onClick={logoutx}>Logout</button>
+              
               | <NavLink to="events">Events</NavLink> | 
             <NavLink to="newevents">Nyt event</NavLink> | 
-           
             <NavLink to ="userpage">Brugerside</NavLink> | 
-              
+            <fetchUser facade={facade}/>
+            <button onClick={logout}>Logout</button>
             </div>
           ) 
           }

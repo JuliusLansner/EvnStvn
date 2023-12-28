@@ -49,7 +49,7 @@ function apiFacade()
         const roles = getUserRoles().split(',')
         return loggedIn && roles.includes(neededRole)
     }
-
+    
 
     const login = (username, password) =>
     {
