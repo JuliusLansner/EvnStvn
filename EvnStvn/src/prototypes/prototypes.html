@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Prototypes</h2>
+
+<p id="test"></p>
+
+<script>
+function Dog(name, age, color) {
+  this.firstName = name;
+  this.age = age;
+  this.hairCol = color;
+}
+
+Dog.prototype.name = function() {
+  return this.firstName + " " + this.age
+};
+
+const dogOne = new Dog("Emi", 1, "white");
+document.getElementById("test").innerHTML =
+"My dog: " + dogOne.name(); 
+</script>
+
+</body>
+</html>

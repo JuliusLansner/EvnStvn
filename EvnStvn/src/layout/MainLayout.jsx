@@ -29,13 +29,7 @@ function MainLayout({loggedIn,login,facade,setUserName,setLoggedIn}) {
             </div>
           ) 
           }
-          
         
-       
-       
-
-      
-            
         
             <Outlet/>
              </div>
