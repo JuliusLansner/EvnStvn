@@ -49,9 +49,9 @@ function App() {
           />
         }
       >
-        <Route path="newevents" element={<NewEvent username={userName} />} />
-        <Route path="events" element={<Events username={userName}/>} />
-        <Route path="events/event/:id" element={<EventDetails username={userName}/>} />
+        <Route path="newevents" element={<NewEvent/>} />
+        <Route path="events" element={<Events/>} />
+        <Route path="events/event/:id" element={<EventDetails/>} />
         
         <Route path="userpage" element={<UserPage username={userName}/>} />
       </Route>

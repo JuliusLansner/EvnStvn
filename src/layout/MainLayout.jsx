@@ -17,7 +17,7 @@ function MainLayout({loggedIn,login,facade,setUserName,setLoggedIn}) {
     return ( <div id="page">
         <div id="container">
 
-        {!loggedIn ? (<LoginP login={login} />):(
+        {loggedIn ? (<LoginP login={login} />):(
             <div>
               
               

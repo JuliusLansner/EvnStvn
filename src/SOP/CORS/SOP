@@ -1,0 +1,2 @@
+sikkerhedsforenstaltning der er lavet til browsere, single origin policy.
+JS kører på siden må kun kunne henvende sig til det domain det kommer fra.

@@ -1,0 +1,4 @@
+CORS er exceoption to the rule
+cross origin -> 
+
+vi kan i apiconfig confugere hvilke hjemmesider der skal have adgang til vores api.

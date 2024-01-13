@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="flexbox.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="outer" class="container">
+      <div id="div1" class="mydiv">div1</div>
+      <div id="div2" class="mydiv">div2</div>
+      <div id="div3" class="mydiv">div3</div>
+      <div id="div4" class="mydiv">div4</div>
+      <div id="div5" class="mydiv">div5</div>
+      <div id="div6" class="mydiv">div6</div>
+      <div id="div7" class="mydiv">div7</div>
+      <div id="div8" class="mydiv">div8</div>
+      <div id="div9" class="mydiv">div9</div>
+      <div id="div10" class="mydiv">div10</div>
+    </div>
+
+    <script lang="javascript">
+      // get the outer div
+      const outerDiv = document.getElementById("outer");
+
+      outerDiv.addEventListener("click", e => {
+
+        // points to the element that was clicked
+        const id = e.target.id;
+        console.log("target:", id)
+        // stop bubling
+        e.stopPropagation();
+
+      })
+    </script>
+  </body>
+</html>
