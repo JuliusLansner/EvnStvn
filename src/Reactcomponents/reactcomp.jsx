@@ -1,11 +1,11 @@
 
 //using react components to demonstrate its use
 // displaying individual items
-const item = ({name}) => {
+const Item = ({name}) => {
     return <li>{name}</li>
 }
 //displaying a list of items
-const listOfItems = ({items}){
+const ListOfItems = ({items})=> {
     return ( 
         <ul>
         {items.map((item,index)=> (
@@ -22,7 +22,7 @@ const App = () =>{
     return (
         <>
          <h1> My React App</h1>  
-         <List items = {itemsList} /> 
+         <ListOfItems items = {itemList} /> 
         </>
     )
 }

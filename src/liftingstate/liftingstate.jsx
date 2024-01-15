@@ -5,25 +5,25 @@ export default function Page(){
     return (
         <>
             <h2> Pages to click</h2>
-            <Panel
+            <PagePanel
             title="first page"
             isActive={activePage === 0}
             onShow={() => setActivePage(0)}>
                 This happens to be the first page
-            </Panel>
-            <Panel
+            </PagePanel>
+            <PagePanel
             title="second page"
             isActive={activePage === 1}
             onShow={() => setActivePage(1)}>
             this happens to be the second page holy moly
-            </Panel>
+            </PagePanel>
 
 
         </>
     );
 }
 
-function pagePanel({title,children,isActive,onShow}){
+function PagePanel({title,children,isActive,onShow}){
     return(
         <section className="page">
             <h3>{title}</h3>

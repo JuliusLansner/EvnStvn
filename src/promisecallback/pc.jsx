@@ -22,8 +22,14 @@ fetchData(useData);
 function promiseFetch(){
     return new Promise(function(resolve,reject){
         setTimeout(function(){
+            const success = Math.random() > 0.5; // 50% chance of succeding
+            if(success){
             const data = "data async'ly";
             resolve(data);
+        }
+        else {
+            reject(new Error("Something wrong"));
+        }
         },1000)
     })
 }

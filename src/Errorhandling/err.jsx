@@ -16,6 +16,7 @@ const ErrorBoundary = ({children}) =>{
     }
     return children;
 }
+//remove this for usecase
 const myComp = () =>{
     return (
         <ErrorBoundary>
@@ -23,3 +24,4 @@ const myComp = () =>{
         </ErrorBoundary>
     )
 }
+export default ErrorBoundary;

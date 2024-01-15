@@ -2,17 +2,14 @@
 // function as an argument and/or return a function.
 
 // an example
-const numbers = [1,2,3,4,5];
-
-//the higher-order functions map can take a function as an argument:
-const numbersDoubled = numbers.map(function(number){
-    return number*2;
-})
-//mmap makes a new array based off of an array, where we give it the task of doubling
-// the current the value while iterating through the array.
-
-//another example using lambda
-const numbersSquared = numbers.map((number) => number **2);
+//making a higher order function
+function multiplyByFactor(factor){
+return function(number){
+    return number * factor;
+}
+}
+const multiplyByTwo = multiplyByFactor(2);
+console.log(multiplyByTwo(5))
 
 
 function callBackFunction(func){
@@ -39,7 +36,7 @@ console.log(result());
 console.log(returnFunc());
 
 //higher order function using a callback 
-
+const numbers = [1,2,3,4,5];
 //make a function 
 function multiByTwo(number){
     return number*2;
@@ -51,5 +48,5 @@ function multiArrayByTwo(array,callback){
 
 //using the array of numbers with the higher order function, with a callback
 
-const result = multiArrayByTwo(numbers,multiByTwo);
+const theResult = multiArrayByTwo(numbers,multiByTwo);
 

@@ -15,7 +15,7 @@ import UserPage from "./components/pages/UserPage";
 import facade from "./util/apiFacade";
 import EventDetails from "./components/pages/EventDetails";
 import LoggedIn from "./components/pages/LoggedIn";
-
+import ErrorBoundary from "./Errorhandling/err";
 
 //
 
@@ -57,11 +57,14 @@ function App() {
       </Route>
     )
   );
-
-  return <div><RouterProvider router={routes} />
- { loggedIn && <LoggedIn userName={userName} />}
-  
-  </div>;
+//using errorboundary from err.jsx
+  return(
+    <div>
+    <ErrorBoundary>
+       <RouterProvider router={routes} />
+      { loggedIn && <LoggedIn userName={userName} />}
+    </ErrorBoundary>
+  </div>);
 }
 
 export default App;

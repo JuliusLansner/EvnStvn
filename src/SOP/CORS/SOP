@@ -1,2 +1,15 @@
+SOP(same origin policy):
+
 sikkerhedsforenstaltning der er lavet til browsere, single origin policy.
-JS kører på siden må kun kunne henvende sig til det domain det kommer fra.
+SOP sikrer at sider at lave requests til andre domains end den originale side.
+
+CORS(Cross-origin resource sharing):
+CORS er ideen om at have en "exception to the rule" fra SOP.
+cross origin -> 
+
+vi kan speficere i vores backend hvilke origins(domains) som vi permitter  til at have adgang til vores server(backends) resourcer.
+
+
+
+gøres igennem Access-control-allow-origin på den den server(backend) som hoster vores api.
+
